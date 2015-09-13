@@ -1,0 +1,53 @@
+@CHARSET "ISO-8859-1";
+
+#container
+{
+	min-height: 500px;
+}
+
+#content
+{
+	margin-top: 20px; 
+	padding-top: 45px;
+	padding-left: 25px;
+	padding-right: 25px;
+	overflow: hidden;
+}
+
+.navtop{
+  background-color: rgb(255, 255, 255);
+  height: 98px;
+  box-shadow: 5px 2px 6px rgb(238, 136, 26);
+}
+
+.outer
+{
+	margin-top: 45px;
+	padding-top: 45px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.hide
+{
+	display: none;
+}
+
+.file-div
+{
+	margin-bottom: 10px;
+}
+
+.file-upload
+{
+	color: #BFBFBF;
+	font-size: 200%;
+  	padding: 45px;
+  	border: 3px solid #BFBFBF;
+  	text-align: center;
+}
+
+.emin
+{
+	color: #3F51B5;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>EasyID App | Generate Your ID</title>
+
+{% load staticfiles %}
+
+<link href="{% static 'easyID/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'easyID/css/style.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'easyID/css/bootstrap-custom.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'easyID/css/login.css' %}" rel="stylesheet">
+<script type="text/javascript">
+
+function Numbers() {
+	var key = event.keyCode;
+
+	if(key < 48 || key >57)
+		{
+			return false;
+		}
+	return true;
+}
+function  Validate()
+{
+	var fname = document.getElementById('Fname');
+	var lname = document.getElementById('Lname');
+	var contact = document.getElementById('Contact');
+	var email = document.getElementById('Email');
+
+	if(fname.value=="")
+		{
+			alert("Fill All Details");
+			fname.focus();
+			return false;
+		}
+
+	else if(lname.value=="")
+		{
+			alert("Fill All Details");
+			lname.focus();
+			return false;
+		}
+	else if(contact.value=="")
+	{
+		alert("Fill All Details");
+		contact.focus();
+		return false;
+	}
+	else if(email.value=="")
+	{
+		alert("Fill All Details");
+		email.focus();
+		return false;
+	}
+	return true;
+}
+
+
+</script>
+</head>
+<body>
+
+{% if error_message %}
+<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+	<nav class="navbar navbar-inverse navbar-fixed-top navtop" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" style="position: absolute;left: 46%;"><img src="{% static 'easyID/images/easyID.gif' %}"></a>
+            </div>
+        </div>
+    </nav>
+
+	<div class="container">
+
+	<div id="content">
+    <div class="omb_login">
+    	<h3 class="omb_authTitle" style="margin-top: 40px;margin-bottom: 0px;color: rgb(238, 136, 26);">Enter Your Information</h3>
+
+		<div class="row omb_row-sm-offset-3 omb_loginOr">
+			<div class="col-xs-12 col-sm-6">
+				<hr class="omb_hrOr">
+				<span class="omb_spanOr">***</span>
+			</div>
+	 	</div>
+
+		<div class="row omb_row-sm-offset-3">
+			<div class="col-xs-12 col-sm-6">
+			    <form class="omb_loginForm" action="{% url 'easyID:register' %}" autocomplete="off" method="POST">
+			    {% csrf_token %}
+
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<input type="text" class="form-control" id="Fname" name="Fname" placeholder="First Name">
+					</div>
+					<span class="help-block"></span>
+
+
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<input type="text" class="form-control" id="Lname" name="Lname" placeholder="Last Name">
+					</div>
+					<span class="help-block"></span>
+
+
+
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+						<input type="text" class="form-control" id="Contact" onkeypress="return Numbers()" name="Contact" placeholder="Contact No.">
+					</div>
+					<span class="help-block"></span>
+
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+						<input type="text" class="form-control" id="Email" name="Email" placeholder="Email Address">
+					</div>
+					<span class="help-block"></span>
+
+                    <div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+						<input type="text" class="form-control" id="Address" name="Address" placeholder="Address">
+					</div>
+					<span class="help-block"></span>
+
+
+					<button class="btn btn-lg btn-primary btn-block" type="submit" onclick="return Validate()"style="
+    background-color: rgb(238, 134, 22);
+    border-color: rgb(238, 134, 22);">Submit</button>
+				</form>
+			</div>
+    	</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+@CHARSET "ISO-8859-1";
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+	background-color: #5FA4A5;
+}
+
+.nav-pills > li > a:hover, .nav-pills > li > a:focus {
+	background-color: #8A6FB4;
+}
+
+.mynav-pills > li > a:hover, .nav-pills > li > a:focus {
+	background-color: #eee;
+}
+
+.nav-custom-pills > li
+{
+	float: left
+}
+
+.nav-custom-pills > li > a
+{
+	color: #614789;
+}
+
+.navbar-inverse
+{
+	
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+	border-color: #0c86ae;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+color: #D6D1DD;
+}
+
+.navbar-inverse .navbar-brand {
+color: #D6D1DD;
+}
+
+.badge
+{
+	background-color: rgba(116, 127, 255, 1);
+}
+
+.rb-grid .rb-span-1, .rb-grid .rb-span-2, .rb-grid .rb-span-3 {
+	height: 100px;	
+}
